@@ -15,6 +15,6 @@ import tk.mybatis.spring.annotation.MapperScan;
 @ComponentScan(basePackages = {"com.sue"})
 public class SueBlogApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SueBlogApplication.class,args);
+        SpringApplication.run(SueBlogApplication.class, args);
     }
 }

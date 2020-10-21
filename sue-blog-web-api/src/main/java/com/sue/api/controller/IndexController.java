@@ -22,14 +22,18 @@ public class IndexController {
     private IndexService indexService;
 
     @GetMapping("dynamic")
-    public ResponseContainer getnamicList(){
+    public ResponseContainer getnamicList() {
 
         return ResponseContainer.ideality(indexService.queryDynamic());
     }
 
+    @GetMapping("readme")
+    public ResponseContainer readme(){
+        return ResponseContainer.ideality(indexService.queryOneReadMe());
+    }
 
     @PostMapping("issue")
-    public ResponseContainer issue(){
+    public ResponseContainer issue() {
         return null;
     }
 

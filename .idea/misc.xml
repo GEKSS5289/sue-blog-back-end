@@ -94,6 +94,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/sue-blog-api/pom.xml" />
+        <option value="$PROJECT_DIR$/sue-server/pom.xml" />
       </set>
     </option>
   </component>

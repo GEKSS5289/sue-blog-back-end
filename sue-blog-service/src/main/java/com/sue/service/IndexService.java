@@ -1,6 +1,7 @@
 package com.sue.service;
 
 import com.sue.model.entity.Dynamic;
+import com.sue.model.entity.Readme;
 
 import java.util.List;
 
@@ -12,4 +13,5 @@ import java.util.List;
 
 public interface IndexService {
     public List<Dynamic> queryDynamic();
+    public Readme queryOneReadMe();
 }

@@ -13,16 +13,15 @@ public class TestController {
 
 
     @GetMapping("testapi")
-    public String getTestApi(){
+    public String getTestApi() {
 
         return null;
     }
 
     @PostMapping("testapi")
-    public String postTestApi(){
+    public String postTestApi() {
         return null;
     }
-
 
 
 }

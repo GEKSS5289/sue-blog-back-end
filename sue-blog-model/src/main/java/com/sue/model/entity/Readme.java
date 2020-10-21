@@ -1,6 +1,6 @@
-package com.sue.entity;
+package com.sue.model.entity;
 
-import javax.persistence.*;
+import javax.persistence.Id;
 
 public class Readme {
     @Id

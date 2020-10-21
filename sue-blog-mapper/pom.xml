@@ -12,12 +12,12 @@
     <artifactId>sue-blog-mapper</artifactId>
     <description>数据mapper组件</description>
 
-   <dependencies>
-       <dependency>
-           <groupId>com.sue.blog</groupId>
-           <artifactId>sue-blog-model</artifactId>
-           <version>1.0-SNAPSHOT</version>
-       </dependency>
-   </dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>com.sue.blog</groupId>
+            <artifactId>sue-blog-model</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>

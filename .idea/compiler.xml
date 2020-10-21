@@ -11,11 +11,13 @@
         <module name="sue-blog-web-api" />
         <module name="sue-blog-model" />
         <module name="sue-blog-mapper" />
+        <module name="sue-server" />
         <module name="sue-blog-common" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="sue-mybatis-generator" target="1.5" />
+      <module name="sue-server" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -27,6 +29,7 @@
       <module name="sue-blog-service" options="-parameters" />
       <module name="sue-blog-support" options="-parameters" />
       <module name="sue-blog-web-api" options="-parameters" />
+      <module name="sue-server" options="-parameters" />
     </option>
   </component>
 </project>
