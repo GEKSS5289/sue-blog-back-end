@@ -1,10 +1,10 @@
-package com.sue.service.impl;
+package com.sue.service.impl.toc;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.sue.mapper.DynamicMapper;
 import com.sue.model.entity.Dynamic;
-import com.sue.service.IndexService;
+import com.sue.service.toc.IndexService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

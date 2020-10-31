@@ -1,8 +1,7 @@
 package com.sue.api.controller;
 
-import com.sue.common.enums.ResponseEnums;
 import com.sue.support.response.ResponseContainer;
-import com.sue.service.IndexService;
+import com.sue.service.toc.IndexService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

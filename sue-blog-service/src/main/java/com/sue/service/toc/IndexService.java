@@ -1,4 +1,4 @@
-package com.sue.service;
+package com.sue.service.toc;
 
 import com.sue.model.entity.Dynamic;
 
