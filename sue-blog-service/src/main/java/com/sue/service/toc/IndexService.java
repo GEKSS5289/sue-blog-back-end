@@ -1,5 +1,6 @@
 package com.sue.service.toc;
 
+import com.sue.model.dto.DynamicDTO;
 import com.sue.model.entity.Dynamic;
 
 import java.util.List;
@@ -11,5 +12,6 @@ import java.util.List;
 
 
 public interface IndexService {
-    public List<Dynamic> queryDynamic();
+     List<Dynamic> queryDynamic();
+
 }

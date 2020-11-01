@@ -1,9 +1,12 @@
 package com.sue.service.impl.admin;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.sue.common.enums.ArticleEnums;
 import com.sue.mapper.ArticleMapper;
 import com.sue.model.dto.ArticleDTO;
 import com.sue.model.entity.Article;
+import com.sue.model.entity.Dynamic;
 import com.sue.model.vo.admin.ArticleMngDescVO;
 import com.sue.service.admin.ArticleMngService;
 import org.springframework.beans.BeanUtils;
@@ -64,4 +67,13 @@ public class ArticleMngServiceImpl implements ArticleMngService {
 
         return articleDescVOS;
     }
+
+    @Override
+    public void deleteArticle(Integer articleId) {
+        Article article = new Article();
+        article.setId(articleId);
+        articleMapper.delete(article);
+    }
+
+
 }

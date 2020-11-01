@@ -3,11 +3,17 @@ package com.sue.service.impl.toc;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.sue.mapper.DynamicMapper;
+import com.sue.model.dto.DynamicDTO;
 import com.sue.model.entity.Dynamic;
 import com.sue.service.toc.IndexService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+import tk.mybatis.mapper.entity.Example;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -24,9 +30,14 @@ public class IndexServiceImpl implements IndexService {
     public List<Dynamic> queryDynamic() {
         //TODO:分页查询
         PageHelper.startPage(1,5);
-        List<Dynamic> dynamics = dynamicMapper.selectAll();
+        Example example = new Example(Dynamic.class);
+        Example.Criteria criteria = example.createCriteria();
+        example.orderBy("createdTime").desc();
+        criteria.andEqualTo("isShow",true);
+        List<Dynamic> dynamics = dynamicMapper.selectByExample(example);
         PageInfo<?> pageInfo = new PageInfo<>(dynamics);
-        System.out.println("ss");
         return dynamics;
     }
+
+
 }

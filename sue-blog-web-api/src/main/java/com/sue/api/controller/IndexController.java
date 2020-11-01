@@ -1,12 +1,12 @@
 package com.sue.api.controller;
 
+import com.sue.model.dto.DynamicDTO;
 import com.sue.support.response.ResponseContainer;
 import com.sue.service.toc.IndexService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 /**
  * @author sue
@@ -21,10 +21,13 @@ public class IndexController {
     private IndexService indexService;
 
     @GetMapping("dynamic")
-    public ResponseContainer getnamicList(){
+    public ResponseContainer queryDyNamicList(){
 
         return ResponseContainer.ideality(indexService.queryDynamic());
     }
+
+
+
 
 
     @PostMapping("issue")
