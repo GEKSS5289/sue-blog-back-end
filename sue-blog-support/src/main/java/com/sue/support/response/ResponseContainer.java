@@ -34,11 +34,11 @@ public class ResponseContainer {
     }
 
     public static ResponseContainer bad(){
-        return new ResponseContainer(ResponseEnums.SUCCESS,null);
+        return new ResponseContainer(ResponseEnums.FAILED,null);
     }
 
     public static ResponseContainer bad(Object data){
-        return new ResponseContainer(ResponseEnums.SUCCESS,data);
+        return new ResponseContainer(ResponseEnums.FAILED,data);
     }
 
 
