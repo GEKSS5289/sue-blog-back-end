@@ -59,7 +59,7 @@ public class DynamicMngServicImpl implements DynamicMngServic {
         dynamicMapper.insert(dynamic);
 
     }
-
+    @Transactional(propagation = Propagation.REQUIRED)
     @Override
     public void deleteDynamic(Integer dynamicId) {
         Dynamic dynamic = new Dynamic();
@@ -67,6 +67,7 @@ public class DynamicMngServicImpl implements DynamicMngServic {
         dynamicMapper.delete(dynamic);
     }
 
+    @Transactional(propagation = Propagation.REQUIRED)
     @Override
     public void updateDynamic(Integer dynamicId, DynamicUpdateDTO dynamicUpdateDTO) {
         Dynamic dynamic = new Dynamic();

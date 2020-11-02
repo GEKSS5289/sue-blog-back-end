@@ -68,6 +68,7 @@ public class ArticleMngServiceImpl implements ArticleMngService {
         return articleDescVOS;
     }
 
+    @Transactional(propagation = Propagation.REQUIRED)
     @Override
     public void deleteArticle(Integer articleId) {
         Article article = new Article();
