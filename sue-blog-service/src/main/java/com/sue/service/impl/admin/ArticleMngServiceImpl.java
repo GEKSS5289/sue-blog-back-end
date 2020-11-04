@@ -8,6 +8,7 @@ import com.sue.model.dto.ArticleDTO;
 import com.sue.model.entity.Article;
 import com.sue.model.entity.Dynamic;
 import com.sue.model.vo.admin.ArticleMngDescVO;
+import com.sue.model.vo.toc.ArticleContentVO;
 import com.sue.service.admin.ArticleMngService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,6 +75,25 @@ public class ArticleMngServiceImpl implements ArticleMngService {
         Article article = new Article();
         article.setId(articleId);
         articleMapper.delete(article);
+    }
+
+    @Override
+    public ArticleContentVO queryArticleContent(Integer articleId) {
+        Article article = new Article();
+        article.setId(articleId);
+        Article article1 = articleMapper.selectOne(article);
+        ArticleContentVO articleContentVO = new ArticleContentVO();
+        BeanUtils.copyProperties(article1,articleContentVO);
+        return articleContentVO;
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    @Override
+    public void updateArticleContent(Integer articleId,ArticleDTO articleDTO) {
+        Article article = new Article();
+        BeanUtils.copyProperties(articleDTO,article);
+        article.setId(articleId);
+        articleMapper.updateByPrimaryKeySelective(article);
     }
 
 

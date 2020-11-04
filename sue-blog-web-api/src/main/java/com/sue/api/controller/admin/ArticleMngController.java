@@ -3,6 +3,7 @@ package com.sue.api.controller.admin;
 import com.sue.model.dto.ArticleDTO;
 import com.sue.model.dto.DynamicDTO;
 import com.sue.model.vo.admin.ArticleMngDescVO;
+import com.sue.model.vo.toc.ArticleContentVO;
 import com.sue.service.admin.ArticleMngService;
 import com.sue.support.response.ResponseContainer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +47,19 @@ public class ArticleMngController {
         return ResponseContainer.ideality();
     }
 
+    @GetMapping("article/{articleId}")
+    public ResponseContainer queryArticleContentById(@PathVariable @Valid @NotNull(message = "文章id不能为空")Integer articleId){
+        ArticleContentVO articleContentVO = articleMngService.queryArticleContent(articleId);
+        return ResponseContainer.ideality(articleContentVO);
+    }
 
 
+    @PutMapping("article/{articleId}")
+    public ResponseContainer updateArticleContent(
+            @PathVariable @Valid @NotNull(message = "文章id不能为空")Integer articleId,
+            @RequestBody ArticleDTO articleDTO
+    ){
+        articleMngService.updateArticleContent(articleId,articleDTO);
+        return ResponseContainer.ideality();
+    }
 }
