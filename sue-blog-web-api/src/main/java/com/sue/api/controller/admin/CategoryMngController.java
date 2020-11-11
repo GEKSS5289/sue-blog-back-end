@@ -31,12 +31,12 @@ public class CategoryMngController {
     }
 
 
+
     @PostMapping("category")
     public ResponseContainer createNewCategory(@RequestBody @Valid CategoryDTO categoryDTO){
         categoryMngService.createCategory(categoryDTO);
         return ResponseContainer.ideality();
     }
-
 
 
 
@@ -47,7 +47,7 @@ public class CategoryMngController {
             @NotBlank(message = "分类ID不能为空") Integer categoryId,
             @RequestBody CategoryDTO categoryDTO
     ){
-        categoryMngService.updateCategoryName(categoryId,categoryDTO);
+        categoryMngService.updateCategory(categoryId,categoryDTO);
         return ResponseContainer.ideality();
     }
 
@@ -59,7 +59,18 @@ public class CategoryMngController {
             @Valid
             @NotNull(message = "分类ID不能为空") Integer categoryId){
 
-        CategoryVO categoryVO = categoryMngService.querycategoryById(categoryId);
+        CategoryVO categoryVO = categoryMngService.queryCategoryById(categoryId);
         return ResponseContainer.ideality(categoryVO);
+    }
+
+
+    @DeleteMapping("category/{categoryId}")
+    public ResponseContainer deleteCategoryById(
+            @PathVariable
+            @Valid
+            @NotNull(message = "分类ID不能为空")Integer categoryId
+    ){
+        categoryMngService.deleteCateogoryById(categoryId);
+        return ResponseContainer.ideality();
     }
 }

@@ -23,5 +23,23 @@
     id, title, content, created_time, update_time, delete_time, is_show, category_id,
     author_id, comment_counts
   </sql>
+  <select id="queryArticleDesc" resultType="com.sue.model.vo.toc.ArticleDescVO">
+      select
+        ar.id as id,
+        ar.title as title,
+        ar.content as content,
+        ar.created_time as createdTime,
+        ca.category_name as categoryName
+      from
+	    article ar
+    left join
+        category ca
+    on
+        ar.category_id = ca.id
+    where
+        ar.is_show = 1
+    order by created_time
+        desc
+    </select>
 
 </mapper>

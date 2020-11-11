@@ -1,5 +1,6 @@
 package com.sue.support.exception.handle;
 
+import com.sue.support.exception.ErrorclampException;
 import com.sue.support.exception.assist.ErrorFilter;
 import com.sue.support.response.ResponseContainer;
 import org.springframework.http.HttpStatus;
@@ -27,6 +28,26 @@ public class ExceptionHandle {
 
         Map<String,String> errorMap = new HashMap<>();
         ErrorFilter.startFilter(errorMap,e);
+        return ResponseContainer.bad(errorMap);
+
+    }
+
+    @ExceptionHandler(ErrorclampException.class)
+    @ResponseStatus(HttpStatus.EXPECTATION_FAILED)
+    public ResponseContainer errorClampException(ErrorclampException e){
+
+        Map<String,String> errorMap = new HashMap<>();
+        ErrorFilter.startFilter(errorMap,e);
+        return ResponseContainer.bad(errorMap);
+
+    }
+
+    @ExceptionHandler(NullPointerException.class)
+    @ResponseStatus(HttpStatus.EXPECTATION_FAILED)
+    public ResponseContainer NullPointerException(NullPointerException e){
+
+        Map<String,String> errorMap = new HashMap<>();
+        errorMap.put("errorMsg","不存在的资源");
         return ResponseContainer.bad(errorMap);
 
     }

@@ -13,10 +13,9 @@ import java.util.List;
 public interface CategoryMngService {
 
     List<CategoryVO> queryCategoryList();
-
     void createCategory(CategoryDTO categoryDTO);
+    void updateCategory(Integer categoryId, CategoryDTO categoryDTO);
+    CategoryVO queryCategoryById(Integer categoryId);
+    void deleteCateogoryById(Integer categoryId);
 
-    void updateCategoryName(Integer categoryId, CategoryDTO categoryDTO);
-
-    CategoryVO querycategoryById(Integer categoryId);
 }

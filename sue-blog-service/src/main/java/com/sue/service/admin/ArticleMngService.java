@@ -17,6 +17,5 @@ public interface ArticleMngService {
      List<ArticleMngDescVO> queryArticleDescList();
      void deleteArticle(Integer articleId);
      ArticleContentVO queryArticleContent(Integer articleId);
-
      void updateArticleContent(Integer articleId,ArticleDTO articleDTO);
 }

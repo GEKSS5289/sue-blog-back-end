@@ -26,22 +26,27 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public List<ArticleDescVO> queryArticleDesc() {
 
+        List<ArticleDescVO> articleDescVOS = articleMapper.queryArticleDesc();
+        articleDescVOS.forEach(a->{
+            a.setCommentCount(1);
+            a.setReadCount(1);
+        });
+//        Example example = new Example(Article.class);
+//        Example.Criteria criteria = example.createCriteria();
+//        criteria.andEqualTo("isShow",1);
+//        example.orderBy("createdTime").desc();
+//        List<Article> articles = articleMapper.selectByExample(example);
+//
+//        List<ArticleDescVO> articleDescVOS = articles
+//                .stream()
+//                .map(article -> new ArticleDescVO(
+//                        article.getId(),
+//                        article.getTitle(),
+//                        article.getCreatedTime(),
+//                        article.getCommentCounts(),2,)
+//                ).collect(Collectors.toList());
 
-        Example example = new Example(Article.class);
-        Example.Criteria criteria = example.createCriteria();
-        criteria.andEqualTo("isShow",1);
-        example.orderBy("createdTime").desc();
-        List<Article> articles = articleMapper.selectByExample(example);
-
-        List<ArticleDescVO> articleDescVOS = articles
-                .stream()
-                .map(article -> new ArticleDescVO(
-                        article.getId(),
-                        article.getTitle(),
-                        article.getCreatedTime(),
-                        article.getCommentCounts(),2,article.getCategoryId())
-                ).collect(Collectors.toList());
-
+//        return articleDescVOS;
         return articleDescVOS;
     }
 

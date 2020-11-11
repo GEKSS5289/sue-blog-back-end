@@ -18,3 +18,5 @@ public class SueBlogApplication {
         SpringApplication.run(SueBlogApplication.class,args);
     }
 }
+
+

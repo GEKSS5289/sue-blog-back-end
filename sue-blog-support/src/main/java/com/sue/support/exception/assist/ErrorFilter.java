@@ -1,5 +1,6 @@
 package com.sue.support.exception.assist;
 
+import com.sue.support.exception.ErrorclampException;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -21,6 +22,12 @@ public class ErrorFilter {
             errorMap.put(i.getField(), i.getDefaultMessage());
         });
     }
+
+    public static void startFilter(Map errorMap, ErrorclampException e){
+        errorMap.put("errorMsg",e.getErrorEnums().getMsg());
+    }
+
+
 
 }
 

@@ -20,5 +20,5 @@ public class ArticleDescVO {
     private Date createdTime;
     private Integer commentCount;
     private Integer readCount;
-    private Integer categoryId;
+    private String categoryName;
 }
