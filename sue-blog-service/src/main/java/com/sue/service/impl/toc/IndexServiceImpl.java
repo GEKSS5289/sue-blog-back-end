@@ -58,21 +58,7 @@ public class IndexServiceImpl implements IndexService {
         messageMapper.insert(message);
     }
 
-    @Override
-    public List<MessageVO> queryMessages() {
-        Example example = new Example(Message.class);
-        Example.Criteria criteria = example.createCriteria();
-        criteria.andEqualTo("isShow",1);
-        List<Message> messages = messageMapper.selectByExample(example);
 
-        List<MessageVO> collect = messages.stream().map(m -> {
-            MessageVO messageVO = new MessageVO();
-            BeanUtils.copyProperties(m, messageVO);
-            return messageVO;
-        }).collect(Collectors.toList());
-
-        return collect;
-    }
 
 
 }

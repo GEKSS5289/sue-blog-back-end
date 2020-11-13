@@ -40,11 +40,6 @@ public class IndexController {
 
 
 
-    @GetMapping("message")
-    public ResponseContainer queryMessage(){
-        List<MessageVO> messageVOS = indexService.queryMessages();
-        return ResponseContainer.ideality(messageVOS);
-    }
 
 
 

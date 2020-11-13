@@ -16,5 +16,5 @@ import java.util.List;
 public interface IndexService {
     List<Dynamic> queryDynamic();
     void createMessage(MessageDTO messageDTO);
-    List<MessageVO> queryMessages();
+
 }
