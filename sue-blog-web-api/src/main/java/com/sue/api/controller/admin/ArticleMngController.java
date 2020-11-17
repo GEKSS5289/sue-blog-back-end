@@ -1,9 +1,8 @@
 package com.sue.api.controller.admin;
 
 import com.sue.model.dto.ArticleDTO;
-import com.sue.model.dto.DynamicDTO;
-import com.sue.model.vo.admin.ArticleMngDescVO;
-import com.sue.model.vo.toc.ArticleContentVO;
+import com.sue.model.vo.ArticleMngDescVO;
+import com.sue.model.vo.ArticleContentVO;
 import com.sue.service.admin.ArticleMngService;
 import com.sue.support.response.ResponseContainer;
 import org.springframework.beans.factory.annotation.Autowired;

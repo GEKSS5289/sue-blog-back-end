@@ -5,11 +5,9 @@ import com.github.pagehelper.PageInfo;
 import com.sue.common.enums.ShowOrHide;
 import com.sue.mapper.DynamicMapper;
 import com.sue.mapper.MessageMapper;
-import com.sue.model.dto.DynamicDTO;
 import com.sue.model.dto.MessageDTO;
 import com.sue.model.entity.Dynamic;
 import com.sue.model.entity.Message;
-import com.sue.model.vo.toc.MessageVO;
 import com.sue.service.toc.IndexService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +18,6 @@ import tk.mybatis.mapper.entity.Example;
 
 import java.util.Date;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @author sue

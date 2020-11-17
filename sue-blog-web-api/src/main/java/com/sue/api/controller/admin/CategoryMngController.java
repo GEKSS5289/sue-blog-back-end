@@ -1,7 +1,7 @@
 package com.sue.api.controller.admin;
 
 import com.sue.model.dto.CategoryDTO;
-import com.sue.model.vo.admin.CategoryVO;
+import com.sue.model.vo.CategoryVO;
 import com.sue.service.admin.CategoryMngService;
 import com.sue.support.response.ResponseContainer;
 import org.springframework.beans.factory.annotation.Autowired;

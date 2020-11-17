@@ -1,4 +1,4 @@
-package com.sue.model.vo.admin;
+package com.sue.model.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

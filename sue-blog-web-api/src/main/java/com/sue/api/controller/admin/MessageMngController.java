@@ -1,6 +1,6 @@
 package com.sue.api.controller.admin;
 
-import com.sue.model.vo.admin.MessageMngVO;
+import com.sue.model.vo.MessageMngVO;
 import com.sue.service.admin.MessageMngService;
 import com.sue.support.response.ResponseContainer;
 import org.springframework.beans.factory.annotation.Autowired;

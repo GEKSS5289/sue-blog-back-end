@@ -3,7 +3,7 @@ package com.sue.mapper;
 
 import com.sue.basemapper.MyMapper;
 import com.sue.model.entity.Article;
-import com.sue.model.vo.toc.ArticleDescVO;
+import com.sue.model.vo.ArticleDescVO;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

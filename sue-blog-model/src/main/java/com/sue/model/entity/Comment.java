@@ -1,4 +1,6 @@
-package com.sue.model;
+package com.sue.model.entity;
+
+import com.sue.model.vo.CommentVO;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
@@ -15,7 +17,7 @@ public class Comment {
      * 评论删除状态(0:删除)
      */
     @Column(name = "is_del")
-    private Byte isDel;
+    private Boolean isDel;
 
     /**
      * 评论的文章id
@@ -41,6 +43,10 @@ public class Comment {
     @Column(name = "updated_time")
     private Date updatedTime;
 
+
+    public CommentVO toCommentVO(){
+        return new CommentVO(this);
+    }
     /**
      * 获取评论ID
      *
@@ -59,22 +65,13 @@ public class Comment {
         this.id = id;
     }
 
-    /**
-     * 获取评论删除状态(0:删除)
-     *
-     * @return is_del - 评论删除状态(0:删除)
-     */
-    public Byte getIsDel() {
+
+    public Boolean getDel() {
         return isDel;
     }
 
-    /**
-     * 设置评论删除状态(0:删除)
-     *
-     * @param isDel 评论删除状态(0:删除)
-     */
-    public void setIsDel(Byte isDel) {
-        this.isDel = isDel;
+    public void setDel(Boolean del) {
+        isDel = del;
     }
 
     /**

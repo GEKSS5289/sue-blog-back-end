@@ -1,8 +1,7 @@
-package com.sue.model.vo.toc;
+package com.sue.model.vo;
 
 import lombok.Data;
 
-import javax.persistence.Column;
 import java.util.Date;
 
 /**
@@ -11,7 +10,8 @@ import java.util.Date;
  */
 
 @Data
-public class MessageVO {
+public class MessageMngVO {
+    private Integer id;
     private String content;
     private Date createdTime;
 }

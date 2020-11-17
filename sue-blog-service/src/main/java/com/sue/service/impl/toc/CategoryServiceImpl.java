@@ -2,7 +2,7 @@ package com.sue.service.impl.toc;
 
 import com.sue.mapper.CategoryMapper;
 import com.sue.model.entity.Category;
-import com.sue.model.vo.admin.CategoryVO;
+import com.sue.model.vo.CategoryVO;
 import com.sue.service.toc.CategoryService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

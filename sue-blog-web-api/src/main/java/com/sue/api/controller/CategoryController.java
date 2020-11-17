@@ -1,6 +1,6 @@
 package com.sue.api.controller;
 
-import com.sue.model.vo.admin.CategoryVO;
+import com.sue.model.vo.CategoryVO;
 import com.sue.service.toc.CategoryService;
 import com.sue.support.response.ResponseContainer;
 import org.springframework.beans.factory.annotation.Autowired;

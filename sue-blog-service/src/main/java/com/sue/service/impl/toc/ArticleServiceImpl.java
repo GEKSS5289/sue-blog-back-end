@@ -2,8 +2,8 @@ package com.sue.service.impl.toc;
 
 import com.sue.mapper.ArticleMapper;
 import com.sue.model.entity.Article;
-import com.sue.model.vo.toc.ArticleContentVO;
-import com.sue.model.vo.toc.ArticleDescVO;
+import com.sue.model.vo.ArticleContentVO;
+import com.sue.model.vo.ArticleDescVO;
 import com.sue.service.toc.ArticleService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @author sue

@@ -1,6 +1,6 @@
 package com.sue.service.toc;
 
-import com.sue.model.vo.toc.MessageVO;
+import com.sue.model.vo.MessageVO;
 
 import java.util.List;
 

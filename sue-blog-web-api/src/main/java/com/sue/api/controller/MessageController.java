@@ -1,6 +1,6 @@
 package com.sue.api.controller;
 
-import com.sue.model.vo.toc.MessageVO;
+import com.sue.model.vo.MessageVO;
 import com.sue.service.toc.MessageService;
 import com.sue.support.response.ResponseContainer;
 import org.springframework.beans.factory.annotation.Autowired;

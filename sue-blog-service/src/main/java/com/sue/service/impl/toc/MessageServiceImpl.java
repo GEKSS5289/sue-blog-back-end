@@ -2,7 +2,7 @@ package com.sue.service.impl.toc;
 
 import com.sue.mapper.MessageMapper;
 import com.sue.model.entity.Message;
-import com.sue.model.vo.toc.MessageVO;
+import com.sue.model.vo.MessageVO;
 import com.sue.service.toc.MessageService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

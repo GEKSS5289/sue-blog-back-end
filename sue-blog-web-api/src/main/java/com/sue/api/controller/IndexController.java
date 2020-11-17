@@ -1,16 +1,12 @@
 package com.sue.api.controller;
 
-import com.sue.model.dto.DynamicDTO;
 import com.sue.model.dto.MessageDTO;
-import com.sue.model.vo.admin.CategoryVO;
-import com.sue.model.vo.toc.MessageVO;
 import com.sue.support.response.ResponseContainer;
 import com.sue.service.toc.IndexService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.List;
 
 /**
  * @author sue

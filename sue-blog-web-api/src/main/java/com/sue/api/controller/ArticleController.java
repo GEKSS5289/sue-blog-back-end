@@ -1,8 +1,7 @@
 package com.sue.api.controller;
 
-import com.sue.model.dto.CommentDTO;
-import com.sue.model.vo.toc.ArticleContentVO;
-import com.sue.model.vo.toc.ArticleDescVO;
+import com.sue.model.vo.ArticleContentVO;
+import com.sue.model.vo.ArticleDescVO;
 import com.sue.service.toc.ArticleService;
 import com.sue.support.response.ResponseContainer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,10 +37,10 @@ public class ArticleController {
         return ResponseContainer.ideality(articleContentVO);
     }
 
-    @PostMapping("article/comment")
-    public ResponseContainer writeArticleComment(@RequestBody CommentDTO commentDTO){
-
-        return null;
-
-    }
+//    @PostMapping("article/comment")
+//    public ResponseContainer writeArticleComment(@RequestBody CommentDTO commentDTO){
+//
+//        return null;
+//
+//    }
 }

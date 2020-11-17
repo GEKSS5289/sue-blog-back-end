@@ -1,7 +1,6 @@
 package com.sue.service.admin;
 
-import com.sue.model.vo.admin.MessageMngVO;
-import com.sue.model.vo.toc.MessageVO;
+import com.sue.model.vo.MessageMngVO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

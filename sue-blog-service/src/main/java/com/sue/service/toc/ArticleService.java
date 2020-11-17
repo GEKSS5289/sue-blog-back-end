@@ -1,7 +1,7 @@
 package com.sue.service.toc;
 
-import com.sue.model.vo.toc.ArticleContentVO;
-import com.sue.model.vo.toc.ArticleDescVO;
+import com.sue.model.vo.ArticleContentVO;
+import com.sue.model.vo.ArticleDescVO;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package com.sue.service.admin;
 
 import com.sue.model.dto.CategoryDTO;
-import com.sue.model.vo.admin.CategoryVO;
+import com.sue.model.vo.CategoryVO;
 
 import java.util.List;
 

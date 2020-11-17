@@ -1,4 +1,4 @@
-package com.sue.model.vo.toc;
+package com.sue.model.vo;
 
 /**
  * @author sue

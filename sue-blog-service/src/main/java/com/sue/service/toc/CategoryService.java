@@ -1,6 +1,6 @@
 package com.sue.service.toc;
 
-import com.sue.model.vo.admin.CategoryVO;
+import com.sue.model.vo.CategoryVO;
 
 import java.util.List;
 

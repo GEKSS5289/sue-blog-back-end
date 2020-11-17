@@ -1,9 +1,8 @@
 package com.sue.service.admin;
 
 import com.sue.model.dto.ArticleDTO;
-import com.sue.model.entity.Dynamic;
-import com.sue.model.vo.admin.ArticleMngDescVO;
-import com.sue.model.vo.toc.ArticleContentVO;
+import com.sue.model.vo.ArticleMngDescVO;
+import com.sue.model.vo.ArticleContentVO;
 
 import java.util.List;
 
