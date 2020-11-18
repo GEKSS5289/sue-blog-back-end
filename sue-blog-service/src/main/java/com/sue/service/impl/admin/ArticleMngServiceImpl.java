@@ -48,6 +48,8 @@ public class ArticleMngServiceImpl implements ArticleMngService {
     @Override
     public List<ArticleMngDescVO> queryArticleDescList() {
 
+
+        //TODO:增加返回分类
         Example example = new Example(Article.class);
         Example.Criteria criteria = example.createCriteria();
         example.orderBy("createdTime").desc();

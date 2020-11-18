@@ -18,7 +18,6 @@ import javax.validation.constraints.NotNull;
 
 @RestController
 @RequestMapping("admin")
-
 public class DynamicMngController {
 
     @Autowired

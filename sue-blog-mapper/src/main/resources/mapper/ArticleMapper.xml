@@ -38,6 +38,8 @@
         ar.category_id = ca.id
     where
         ar.is_show = 1
+				and
+			  ca.category_name is NOT null
     order by created_time
         desc
     </select>
