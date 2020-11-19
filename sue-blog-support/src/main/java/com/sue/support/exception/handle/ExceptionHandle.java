@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.io.IOException;
+
 /**
  * @author sue
  * @date 2020/10/8 20:21
@@ -53,4 +55,9 @@ public class ExceptionHandle {
         return ResponseContainer.bad(ErrorMapGenerator.errorPush(ErrorEnums.TOKEN_ERROR.getMsg()));
     }
 
+    @ExceptionHandler(IOException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ResponseContainer  iOException(IOException e){
+        return ResponseContainer.bad(ErrorMapGenerator.errorPush(ErrorEnums.FILE_UPLOAD_FAIL.getMsg()));
+    }
 }

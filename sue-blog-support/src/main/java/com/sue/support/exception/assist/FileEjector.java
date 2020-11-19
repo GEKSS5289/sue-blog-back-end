@@ -1,9 +1,11 @@
-package com.sue.common.utils;
+package com.sue.support.exception.assist;
 
 import com.aliyun.oss.OSS;
 import com.aliyun.oss.OSSClientBuilder;
 import com.sue.common.config.ALInfoConfig;
 import com.sue.common.config.ALOSSConfig;
+import com.sue.common.enums.ErrorEnums;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
@@ -26,13 +28,16 @@ public class FileEjector {
     private ALInfoConfig alInfoConfig;
 
 
-    public void check(MultipartFile file){
-
+    private void check(MultipartFile file){
+        if(StringUtils.isBlank(file.getOriginalFilename())){
+            ExceptionPerformer.Execute(ErrorEnums.FILE_NULL);
+        }
     }
 
     //文件上传到oss文件服务器
     public String launch(MultipartFile file) throws IOException {
 
+        this.check(file);
         // Endpoint以杭州为例，其它Region请按实际情况填写。
         String endpoint = alossConfig.getEndpoint();
         // 阿里云主账号AccessKey拥有所有API的访问权限，风险很高。强烈建议您创建并使用RAM账号进行API访问或日常运维，请登录 https://ram.console.aliyun.com 创建RAM账号。

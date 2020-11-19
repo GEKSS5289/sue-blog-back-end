@@ -1,7 +1,8 @@
 package com.sue.service.impl.admin;
 
 import com.sue.common.enums.FileStatusEnums;
-import com.sue.common.utils.FileEjector;
+import com.sue.model.dto.FileVO;
+import com.sue.support.exception.assist.FileEjector;
 import com.sue.mapper.FileMapper;
 import com.sue.model.entity.File;
 import com.sue.service.admin.FileMngService;
@@ -10,9 +11,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
+import tk.mybatis.mapper.entity.Example;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author sue
@@ -31,7 +35,7 @@ public class FileMngServiceImpl implements FileMngService {
     @Override
     public void uploadFile(Integer userId, MultipartFile file) throws IOException {
 
-        fileEjector.check(file);
+
         String resultPath = fileEjector.launch(file);
 
         Date date = new Date();
@@ -48,5 +52,21 @@ public class FileMngServiceImpl implements FileMngService {
         fileMapper.insert(tempFile);
 
 
+    }
+
+    @Override
+    public List<FileVO> queryAllFileInfo() {
+
+        Example example = new Example(File.class);
+        Example.Criteria criteria = example.createCriteria();
+        example.orderBy("createdTime").desc();
+        criteria.andEqualTo("fileUsable",FileStatusEnums.PROVIDE.getCode());
+
+        List<FileVO> collect = fileMapper.selectByExample(example)
+                .stream()
+                .map(File::toFileVO)
+                .collect(Collectors.toList());
+
+        return collect;
     }
 }

@@ -19,8 +19,11 @@ public enum  ErrorEnums {
     NOT_FOUND_RESOURCE(2001,"不存在的资源"),
     TOKEN_FAILURE(2002,"token失效"),
     TOKEN_ERROR(2003,"token出错"),
-    NOT_TOKEN(2004,"token不存在");
+    NOT_TOKEN(2004,"token不存在"),
 
+
+    FILE_NULL(3001,"文件为空"),
+    FILE_UPLOAD_FAIL(3002,"文件上传失败");
 
     private Integer code;
     private String msg;

@@ -8,7 +8,7 @@ import lombok.Getter;
  */
 
 @Getter
-public enum ShowOrHide {
+public enum ShowOrHideEnums {
 
     SHOW(true,"显示留言"),
     HIDE(false,"不显示留言");
@@ -16,7 +16,7 @@ public enum ShowOrHide {
     private Boolean code;
     private String msg;
 
-    ShowOrHide(Boolean code, String msg) {
+    ShowOrHideEnums(Boolean code, String msg) {
         this.code = code;
         this.msg = msg;
     }

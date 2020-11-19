@@ -1,5 +1,7 @@
 package com.sue.model.entity;
 
+import com.sue.model.dto.FileVO;
+
 import javax.persistence.Column;
 import javax.persistence.Id;
 import java.util.Date;
@@ -52,6 +54,12 @@ public class File {
      */
     @Column(name = "updated_time")
     private Date updatedTime;
+
+
+
+    public FileVO toFileVO(){
+        return new FileVO(this);
+    }
 
     /**
      * 获取文件Id

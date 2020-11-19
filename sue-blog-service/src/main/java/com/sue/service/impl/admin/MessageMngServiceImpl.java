@@ -1,7 +1,7 @@
 package com.sue.service.impl.admin;
 
 import com.sue.common.enums.ErrorEnums;
-import com.sue.common.enums.ShowOrHide;
+import com.sue.common.enums.ShowOrHideEnums;
 import com.sue.mapper.MessageMapper;
 import com.sue.model.entity.Message;
 import com.sue.model.vo.MessageMngVO;
@@ -31,7 +31,7 @@ public class MessageMngServiceImpl implements MessageMngService {
 
         Example example = new Example(Message.class);
         Example.Criteria criteria = example.createCriteria();
-        criteria.andEqualTo("isShow",ShowOrHide.HIDE.getCode());
+        criteria.andEqualTo("isShow", ShowOrHideEnums.HIDE.getCode());
         List<Message> messages = messageMapper.selectByExample(example);
 
         List<MessageMngVO> collect = messages.stream().map(m -> {
@@ -48,7 +48,7 @@ public class MessageMngServiceImpl implements MessageMngService {
         Example example = new Example(Message.class);
         Example.Criteria criteria = example.createCriteria();
         example.orderBy("createdTime").desc();
-        criteria.andEqualTo("isShow",ShowOrHide.SHOW.getCode());
+        criteria.andEqualTo("isShow", ShowOrHideEnums.SHOW.getCode());
 
         List<Message> messages = messageMapper.selectByExample(example);
         if(messages.isEmpty()) {
@@ -68,7 +68,7 @@ public class MessageMngServiceImpl implements MessageMngService {
     public void passMessage(Integer messageId) {
         Message message = new Message();
         message.setId(messageId);
-        message.setIsShow(ShowOrHide.SHOW.getCode());
+        message.setIsShow(ShowOrHideEnums.SHOW.getCode());
         messageMapper.updateByPrimaryKeySelective(message);
     }
 
@@ -76,7 +76,7 @@ public class MessageMngServiceImpl implements MessageMngService {
     public void failMessage(Integer messageId) {
         Message message = new Message();
         message.setId(messageId);
-        message.setIsShow(ShowOrHide.HIDE.getCode());
+        message.setIsShow(ShowOrHideEnums.HIDE.getCode());
         messageMapper.updateByPrimaryKeySelective(message);
     }
 

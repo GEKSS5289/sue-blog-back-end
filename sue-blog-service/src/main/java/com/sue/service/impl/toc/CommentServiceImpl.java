@@ -1,7 +1,6 @@
 package com.sue.service.impl.toc;
 
 import com.sue.common.enums.ExistEnums;
-import com.sue.common.enums.ShowOrHide;
 import com.sue.mapper.CommentMapper;
 import com.sue.model.dto.CommentDTO;
 import com.sue.model.entity.Comment;

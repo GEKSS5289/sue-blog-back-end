@@ -2,7 +2,7 @@ package com.sue.service.impl.toc;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.sue.common.enums.ShowOrHide;
+import com.sue.common.enums.ShowOrHideEnums;
 import com.sue.mapper.DynamicMapper;
 import com.sue.mapper.MessageMapper;
 import com.sue.model.dto.MessageDTO;
@@ -51,7 +51,7 @@ public class IndexServiceImpl implements IndexService {
         Message message = new Message();
         BeanUtils.copyProperties(messageDTO,message);
         message.setCreatedTime(new Date());
-        message.setIsShow(ShowOrHide.HIDE.getCode());
+        message.setIsShow(ShowOrHideEnums.HIDE.getCode());
         messageMapper.insert(message);
     }
 

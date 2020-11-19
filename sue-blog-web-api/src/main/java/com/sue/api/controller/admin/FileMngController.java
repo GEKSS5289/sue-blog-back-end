@@ -1,16 +1,17 @@
 package com.sue.api.controller.admin;
 
+import com.sue.model.dto.FileVO;
 import com.sue.service.admin.FileMngService;
 import com.sue.support.response.ResponseContainer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * @author sue
@@ -29,9 +30,15 @@ public class FileMngController {
 
 
     @PostMapping("file")
-    public ResponseContainer uploadFile(@RequestParam Integer userId, MultipartFile file) throws IOException {
+    public ResponseContainer uploadFile(@RequestParam Integer userId,MultipartFile file) throws IOException {
 
         fileMngService.uploadFile(userId,file);
         return ResponseContainer.ideality();
+    }
+
+    @GetMapping("file")
+    public ResponseContainer queryAllFile(){
+        List<FileVO> fileVOS = fileMngService.queryAllFileInfo();
+        return ResponseContainer.ideality(fileVOS);
     }
 }
