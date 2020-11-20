@@ -5,6 +5,7 @@ import lombok.Data;
 import org.springframework.beans.BeanUtils;
 
 import javax.persistence.Column;
+import javax.persistence.Id;
 import java.util.Date;
 
 /**
@@ -14,6 +15,13 @@ import java.util.Date;
 
 @Data
 public class FileVO {
+
+    /**
+     * 文件Id
+     */
+    @Id
+    private Integer id;
+
     /**
      * 文件名
      */

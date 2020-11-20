@@ -1,11 +1,14 @@
 package com.sue.service.impl.admin;
 
+import com.sue.common.enums.ErrorEnums;
 import com.sue.common.enums.FileStatusEnums;
 import com.sue.model.dto.FileVO;
+import com.sue.support.exception.assist.ExceptionPerformer;
 import com.sue.support.exception.assist.FileEjector;
 import com.sue.mapper.FileMapper;
 import com.sue.model.entity.File;
 import com.sue.service.admin.FileMngService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -60,7 +63,6 @@ public class FileMngServiceImpl implements FileMngService {
         Example example = new Example(File.class);
         Example.Criteria criteria = example.createCriteria();
         example.orderBy("createdTime").desc();
-        criteria.andEqualTo("fileUsable",FileStatusEnums.PROVIDE.getCode());
 
         List<FileVO> collect = fileMapper.selectByExample(example)
                 .stream()
@@ -68,5 +70,18 @@ public class FileMngServiceImpl implements FileMngService {
                 .collect(Collectors.toList());
 
         return collect;
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    @Override
+    public void updateFileStatus(Integer fileId) {
+        File file = new File();
+        file.setId(fileId);
+        File file1 = fileMapper.selectByPrimaryKey(file);
+        if(file1 == null){
+            ExceptionPerformer.Execute(ErrorEnums.NOT_FOUND_RESOURCE);
+        }
+        file1.setFileUsable(!file1.getFileUsable());
+        fileMapper.updateByPrimaryKey(file1);
     }
 }

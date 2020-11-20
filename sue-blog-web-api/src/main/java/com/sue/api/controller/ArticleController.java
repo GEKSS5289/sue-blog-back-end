@@ -1,8 +1,11 @@
 package com.sue.api.controller;
 
+import com.sue.model.dto.CommentDTO;
 import com.sue.model.vo.ArticleContentVO;
 import com.sue.model.vo.ArticleDescVO;
+import com.sue.model.vo.CommentVO;
 import com.sue.service.toc.ArticleService;
+import com.sue.service.toc.CommentService;
 import com.sue.support.response.ResponseContainer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +27,9 @@ public class ArticleController {
     @Autowired
     private ArticleService articleService;
 
+    @Autowired
+    private CommentService commentService;
+
     @GetMapping("article")
     public ResponseContainer queryArticleDescList(){
         List<ArticleDescVO> articleDescVOS = articleService.queryArticleDesc();
@@ -43,4 +49,20 @@ public class ArticleController {
 //        return null;
 //
 //    }
+
+
+
+    @PostMapping("article/comment")
+    public ResponseContainer writeArticleComment(@RequestBody @Valid CommentDTO commentDTO){
+
+        commentService.saveComment(commentDTO);
+        return ResponseContainer.ideality();
+    }
+
+
+    @GetMapping("article/comment/{articleId}")
+    public ResponseContainer queryCommentByArticleId(@PathVariable @Valid @NotNull(message = "文章ID不能为空")Integer articleId){
+        List<CommentVO> commentVOS = commentService.queryCommentByArticleId(articleId);
+        return ResponseContainer.ideality(commentVOS);
+    }
 }

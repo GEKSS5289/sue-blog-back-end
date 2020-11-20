@@ -14,4 +14,5 @@ import java.util.List;
 public interface FileMngService {
     void uploadFile(Integer userId,MultipartFile file) throws IOException;
     List<FileVO> queryAllFileInfo();
+    void updateFileStatus(Integer fileId);
 }

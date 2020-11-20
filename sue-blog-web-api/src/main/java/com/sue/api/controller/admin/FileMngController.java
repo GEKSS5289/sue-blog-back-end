@@ -41,4 +41,10 @@ public class FileMngController {
         List<FileVO> fileVOS = fileMngService.queryAllFileInfo();
         return ResponseContainer.ideality(fileVOS);
     }
+
+    @PutMapping("file")
+    public ResponseContainer updateFileStatus(@RequestParam Integer fileId){
+        fileMngService.updateFileStatus(fileId);
+        return ResponseContainer.ideality();
+    }
 }
