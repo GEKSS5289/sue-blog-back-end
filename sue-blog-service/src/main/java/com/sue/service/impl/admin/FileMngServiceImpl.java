@@ -2,13 +2,12 @@ package com.sue.service.impl.admin;
 
 import com.sue.common.enums.ErrorEnums;
 import com.sue.common.enums.FileStatusEnums;
-import com.sue.model.dto.FileVO;
+import com.sue.model.vo.FileVO;
 import com.sue.support.exception.assist.ExceptionPerformer;
 import com.sue.support.exception.assist.FileEjector;
 import com.sue.mapper.FileMapper;
 import com.sue.model.entity.File;
 import com.sue.service.admin.FileMngService;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;

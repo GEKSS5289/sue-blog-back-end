@@ -1,6 +1,6 @@
 package com.sue.model.entity;
 
-import com.sue.model.dto.FileVO;
+import com.sue.model.vo.FileVO;
 
 import javax.persistence.Column;
 import javax.persistence.Id;

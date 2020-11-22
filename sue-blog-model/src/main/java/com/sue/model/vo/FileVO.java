@@ -1,4 +1,4 @@
-package com.sue.model.dto;
+package com.sue.model.vo;
 
 import com.sue.model.entity.File;
 import lombok.Data;
@@ -16,28 +16,11 @@ import java.util.Date;
 @Data
 public class FileVO {
 
-    /**
-     * 文件Id
-     */
-    @Id
     private Integer id;
-
-    /**
-     * 文件名
-     */
-    @Column(name = "file_name")
     private String fileName;
-    /**
-     * 文件大小
-     */
-    @Column(name = "file_size")
     private Long fileSize;
-    /**
-     * 文件上传时间
-     */
-    @Column(name = "created_time")
     private Date createdTime;
-
+    private Boolean fileUsable;
     public FileVO(File file){
         BeanUtils.copyProperties(file,this);
     }

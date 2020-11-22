@@ -1,6 +1,6 @@
 package com.sue.api.controller.admin;
 
-import com.sue.model.dto.FileVO;
+import com.sue.model.vo.FileVO;
 import com.sue.service.admin.FileMngService;
 import com.sue.support.response.ResponseContainer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.io.IOException;
 import java.util.List;
@@ -42,8 +41,8 @@ public class FileMngController {
         return ResponseContainer.ideality(fileVOS);
     }
 
-    @PutMapping("file")
-    public ResponseContainer updateFileStatus(@RequestParam Integer fileId){
+    @PutMapping("file/{fileId}")
+    public ResponseContainer updateFileStatus(@PathVariable @Valid @NotNull(message = "fileId不能为空") Integer fileId){
         fileMngService.updateFileStatus(fileId);
         return ResponseContainer.ideality();
     }
